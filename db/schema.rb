@@ -14,26 +14,41 @@
 ActiveRecord::Schema.define(version: 20160817060931) do
 
   create_table "craigslists", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "email",        null: false
+    t.string   "password",     null: false
+    t.string   "phone_number"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "emails", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "username",        null: false
+    t.string   "password",        null: false
+    t.integer  "phone_number_id", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "facebooks", force: :cascade do |t|
+    t.string   "email",      null: false
+    t.string   "password",   null: false
+    t.integer  "person_id",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "people", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",         null: false
+    t.date     "dob",          null: false
+    t.string   "gender",       null: false
+    t.integer  "phone_number", null: false
+    t.string   "location",     null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "phone_numbers", force: :cascade do |t|
+    t.integer  "person_id",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
