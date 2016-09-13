@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160817060931) do
   end
 
   create_table "emails", force: :cascade do |t|
+    t.integer  "person_id",       null: false
     t.string   "username",        null: false
     t.string   "password",        null: false
     t.integer  "phone_number_id", null: false
