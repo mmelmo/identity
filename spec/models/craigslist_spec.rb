@@ -8,7 +8,7 @@ describe Craigslist do
 	end
 
 	it "has a valid factory" do
-		album = FactoryGirl.create(:craigslist)
+		craigslist = FactoryGirl.create(:craigslist)
 		expect(craigslist).to be_valid
 
 		craiglists = Craiglist.all
@@ -18,7 +18,7 @@ describe Craigslist do
 	it "is invalid without email" do
 		email = nil
 		error = ActiveRecord::RecordInvalid
-		expect { FactoryGirl.create(:craigslist,email: email)}. to raise_error(error)
+		expect { FactoryGirl.create(:craigslist, email: email)}. to raise_error(error)
 
 		craigslists = Craigslist.all
 		expect(craigslists.count).to eq(0)
